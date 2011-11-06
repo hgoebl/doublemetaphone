@@ -901,6 +901,6 @@ function DoubleMetaphone() {
         return this.primary.length >= this.maxLength &&
             this.alternate.length >= this.maxLength;
     };
-};
+}
 
 module.exports = DoubleMetaphone;

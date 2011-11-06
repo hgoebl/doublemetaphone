@@ -1,0 +1,22 @@
+{
+    "name":"doublemetaphone",
+    "version":"0.0.1",
+    "main":"doublemetaphone.js",
+    "description":"Encode a string into a phonetic code with the Double Metaphone algorithm",
+    "keywords":["phonetic", "metaphone", "codec", "sounds", "like"],
+    "homepage":"https://github.com/hgoebl/doublemetaphone",
+    "repository":{
+        "type":"git",
+        "url":"https://github.com/hgoebl/doublemetaphone.git"
+    },
+    "dependencies":{
+    },
+    "engines":{
+        "node":">=0.4.12"
+    },
+    "author":{
+        "name":"Heinrich Goebl",
+        "email":"hgoebl@goebl.com",
+        "url":"http://www.goebl.com/"
+    }
+}
