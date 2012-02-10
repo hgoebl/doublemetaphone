@@ -1,3 +1,4 @@
+/*jshint indent:4, node:true, devel:true, globalstrict:true*/
 "use strict";
 
 var DoubleMetaphone = require('../doublemetaphone.js'),
@@ -18,13 +19,13 @@ function compareWithCommons(name, refPrimary, refAlternate) {
     }
 
     if (result.primary !== refPrimary) {
-        console.log('cc-diff in primary: Input=' + name
-            + ' ref=' + refPrimary + ' me=' + result.primary);
+        console.log('cc-diff in primary: Input=' + name +
+            ' ref=' + refPrimary + ' me=' + result.primary);
         diffs += 1;
     }
     if (result.alternate !== refAlternate) {
-        console.log('cc-diff in alternate: Input=' + name
-            + ' ref=' + refAlternate + ' me=' + result.alternate);
+        console.log('cc-diff in alternate: Input=' + name +
+            ' ref=' + refAlternate + ' me=' + result.alternate);
         diffs += 1;
     }
     return diffs;
@@ -32,7 +33,7 @@ function compareWithCommons(name, refPrimary, refAlternate) {
 
 refdata = fs.readFileSync(__dirname + '/linux-credits.txt', 'utf-8');
 refdata = refdata.split('\n');
-refdata.forEach(function(line) {
+refdata.forEach(function (line) {
     var tokens;
 
     if (line.trim().length === 0 || line.charAt(0) === '#') {
