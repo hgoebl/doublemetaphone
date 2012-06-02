@@ -3,7 +3,7 @@
       
   Encode a string into a phonetic one with the Double Metaphone algorithm.
 
-    var DoubleMetaphone = require('../doublemetaphone.js'),
+    var DoubleMetaphone = require('doublemetaphone'),
         encoder = new DoubleMetaphone();
 
     console.log(encoder.doubleMetaphone('Aleksandr'));
@@ -25,12 +25,38 @@
   * compatible with [Apache Jakarta Commons Codec](http://commons.apache.org/codec/) class DoubleMetaphone, Version 1.5
   * maximum length of codec settable (default=4)
   * implements the standard (=primary) and alternate encoding
+  * runs in node.js and in the browser
 
 ## Running Tests
 
 Running tests should output nothing.
 
-    $ node test/test-doublemetaphone.js
+    $ npm test
+
+To run tests in a browser, load `test/test-doublemetaphone.html`.
+
+After "RUNNING TEST..." the text should change to "TEST SUCCESSFUL".
+
+## Test Results
+
+Following Browsers has been tested:
+
+ * Chromium 18.0.1025.151 / Linux
+ * Firefox 11.0 / Linux
+ * Firefox 5.0.1 and 12.0 / Windows XP
+ * Safari 5.1.2 / Windows XP
+ * Opera 11.11 / Windows XP
+ * Epiphany Webbrowser 2.30.2 / Linux
+ * Internet Explorer 8.0.6001 / Windows XP
+
+These Browser didn't pass the tests (2 differences compared to commons-codec):
+
+ * Firefox (all tested versions)
+ * Opera
+ * Internet Explorer
+
+**Reason:** The correct upper-case conversion of the German "ß" (&szlig;) is "SS". IE, Firefox and Opera do not convert
+this character and thus come to different Double Metaphone encodings.
 
 ## Credits
 

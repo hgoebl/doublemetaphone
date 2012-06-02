@@ -33,7 +33,7 @@
  * usual JavaScript code quality (JSLint, == vs. ===, multiple var, use function
  * before declaration, ...).
  */
-function DoubleMetaphone() {
+(function (exports) {
     "use strict";
 
     /**
@@ -52,7 +52,11 @@ function DoubleMetaphone() {
     /**
      * Maximum length of an encoding, default is 4
      */
-    maxCodeLen = 4;
+    DEFAULT_CODE_LEN = 4;
+
+    function DoubleMetaphone() {
+        this.maxCodeLen = DEFAULT_CODE_LEN;
+    }
 
     /**
      * Encode a value with Double Metaphone (primary and alternate encoding).
@@ -61,7 +65,7 @@ function DoubleMetaphone() {
      * @return an object <code>{ primary: 'XXXX', alternate: 'YYYY' }</code>;
      *         <tt>null</tt> if input is null, empty or blank.
      */
-    this.doubleMetaphone = function(value) {
+    DoubleMetaphone.prototype.doubleMetaphone = function(value) {
         value = cleanInput(value);
         if (!value) {
             return null;
@@ -70,7 +74,7 @@ function DoubleMetaphone() {
         var slavoGermanic = isSlavoGermanic(value),
             index = isSilentStart(value) ? 1 : 0;
 
-        var result = new DoubleMetaphoneResult(maxCodeLen);
+        var result = new DoubleMetaphoneResult(this.maxCodeLen);
 
         while (!result.isComplete() && index <= value.length - 1) {
             switch (value.charAt(index)) {
@@ -175,16 +179,16 @@ function DoubleMetaphone() {
      * Returns the maxCodeLen.
      * @return int
      */
-    this.getMaxCodeLen = function() {
-        return maxCodeLen;
+    DoubleMetaphone.prototype.getMaxCodeLen = function() {
+        return this.maxCodeLen;
     };
 
     /**
      * Sets the maxCodeLen.
      * @param pMaxCodeLen The maxCodeLen to set
      */
-    this.setMaxCodeLen = function(pMaxCodeLen) {
-        maxCodeLen = pMaxCodeLen;
+    DoubleMetaphone.prototype.setMaxCodeLen = function(pMaxCodeLen) {
+        this.maxCodeLen = pMaxCodeLen;
     };
 
     //-- BEGIN HANDLERS --//
@@ -818,7 +822,7 @@ function DoubleMetaphone() {
         if (input.length == 0) {
             return null;
         }
-        return input.toUpperCase();
+        return input.toLocaleUpperCase();
     }
 
     /**
@@ -901,6 +905,13 @@ function DoubleMetaphone() {
         return this.primary.length >= this.maxLength &&
             this.alternate.length >= this.maxLength;
     };
-}
 
-module.exports = DoubleMetaphone;
+    exports(DoubleMetaphone);
+
+})(function (data) {
+    if (typeof module !== "undefined" && module.exports) {
+        module.exports = data;
+    } else {
+        window.DoubleMetaphone = data;
+    }
+});

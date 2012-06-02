@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>test-doublemetaphone</title>
+</head>
+<body>
+<div id="outcome">TEST RUNNING...</div>
+<br/>
+<!--
+<div><pre id="testdata">
+Matti	Aarnio	MT	MT	ARN	ARN
+Dragos	Acostachioaie	TRKS	TRKS	AKST	AKST
+Krishna	Balasubramanian	KRXN	KRXN	PLSP	PLSP
+Heiko	Eißfeldt	HK	HK	ASFL	ASFL
+</pre></div>
+-->
+<script type="text/javascript" src="../doublemetaphone.js"></script>
+<script type="text/javascript" src="test-doublemetaphone.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        "use strict";
+        $.ajax({
+            url: 'linux-credits.txt',
+            dataType: 'text',
+            success: function (rawdata) {
+                // rawdata = $('#testdata').text(); // work with embedded testdata
+                /*var DoubleMetaphone = function() {
+                 this.doubleMetaphone = function () {return 'ABC'};
+                 this.setMaxLen = function () {};
+                 };*/ // work with a faked implementation
+                runTest(DoubleMetaphone, rawdata, function (diffs) {
+                    var outcome = diffs === 0 ? 'TEST SUCCESSFUL' : 'TEST FAILED; diffs=' + diffs;
+                    $('#outcome').text(outcome);
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,29 +1,31 @@
 {
-    "name":"doublemetaphone",
-    "version":"0.0.3",
-    "main":"doublemetaphone.js",
-    "description":"Encode a string into a phonetic code with the Double Metaphone algorithm",
-    "keywords":["phonetic", "metaphone", "codec", "sounds", "like"],
-    "homepage":"https://github.com/hgoebl/doublemetaphone",
-    "repository":{
-        "type":"git",
-        "url":"https://github.com/hgoebl/doublemetaphone.git"
+    "name": "doublemetaphone",
+    "version": "0.1.0",
+    "main": "doublemetaphone.js",
+    "description": "Encode a string into a phonetic code with the Double Metaphone algorithm",
+    "keywords": ["phonetic", "metaphone", "codec", "sounds", "like"],
+    "homepage": "https://github.com/hgoebl/doublemetaphone",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hgoebl/doublemetaphone.git"
     },
-    "dependencies":{
+    "dependencies": {
     },
-    "engines":{
-        "node":">=0.4.12"
+    "engines": {
+        "node": ">=0.4.12"
     },
-    "author":{
-        "name":"Heinrich Goebl",
-        "email":"hgoebl@goebl.com",
-        "url":"http://www.goebl.com/"
+    "author": {
+        "name": "Heinrich Göbl",
+        "email": "hgoebl@goebl.com",
+        "url": "http://www.goebl.com/"
     },
-    "licenses":[{
-        "type":"Apache 2.0",
-        "url": "http://github.com/hgoebl/doublemetaphone/raw/master/LICENSE"
-    }],
-    "scripts":{
-        "test": "node test/test-doublemetaphone.js"
+    "licenses": [
+        {
+            "type": "Apache 2.0",
+            "url": "http://github.com/hgoebl/doublemetaphone/raw/master/LICENSE"
+        }
+    ],
+    "scripts": {
+        "test": "node test/test-as-node-module.js"
     }
 }
