@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/hgoebl/doublemetaphone.png)](http://travis-ci.org/hgoebl/doublemetaphone)
 
 # DoubleMetaphone
       
