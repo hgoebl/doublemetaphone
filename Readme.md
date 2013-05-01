@@ -22,7 +22,7 @@
 
 ## Information
 
-  * compatible with [Apache Jakarta Commons Codec](http://commons.apache.org/codec/) class DoubleMetaphone, Version 1.5
+  * compatible with [Apache Jakarta Commons Codec](http://commons.apache.org/codec/) class DoubleMetaphone, Version 1.5 - 1.8
   * maximum length of codec settable (default=4)
   * implements the standard (=primary) and alternate encoding
   * runs in node.js and in the browser
