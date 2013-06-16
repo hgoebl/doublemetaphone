@@ -25,6 +25,11 @@
             <artifactId>commons-codec</artifactId>
             <version>1.8</version>
         </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.3</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -43,7 +48,7 @@
                             <mainClass>com.goebl.misc.CreateTestData</mainClass>
                             <arguments>
                                 <argument>src/main/resources/linux-credits.txt</argument>
-                                <argument>../linux-credits.txt</argument>
+                                <argument>../linux-credits.js</argument>
                             </arguments>
                         </configuration>
                     </execution>

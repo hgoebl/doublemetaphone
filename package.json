@@ -1,6 +1,6 @@
 {
     "name": "doublemetaphone",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "main": "doublemetaphone.js",
     "description": "Encode a string into a phonetic code with the Double Metaphone algorithm",
     "keywords": ["phonetic", "metaphone", "codec", "sounds", "like"],

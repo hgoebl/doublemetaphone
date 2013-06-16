@@ -41,19 +41,23 @@ After "RUNNING TEST..." the text should change to "TEST SUCCESSFUL".
 
 Following Browsers has been tested:
 
- * Chromium 18.0.1025.151 / Linux
- * Firefox 11.0 / Linux
+ * Chromium 18.0, 25.0 / Linux
+ * Chrome 26.0 / Linux
+ * Firefox 11.0, 20.0 / Linux
  * Firefox 5.0.1 and 12.0 / Windows XP
+ * Firefox 21.0 / Windows 7
+ * Chrome 27.0 / Windows 7
  * Safari 5.1.2 / Windows XP
  * Opera 11.11 / Windows XP
  * Epiphany Webbrowser 2.30.2 / Linux
  * Internet Explorer 8.0.6001 / Windows XP
+ * Internet Explorer 9.0 / Windows 7
 
 These Browser didn't pass the tests (2 differences compared to commons-codec):
 
  * Firefox (all tested versions)
  * Opera
- * Internet Explorer
+ * Internet Explorer (all tested versions)
 
 **Reason:** The correct upper-case conversion of the German "ß" (&szlig;) is "SS". IE, Firefox and Opera do not convert
 this character and thus come to different Double Metaphone encodings.

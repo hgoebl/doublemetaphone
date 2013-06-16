@@ -2,7 +2,7 @@
 
 "use strict";
 var fs = require('fs'),
-    rawdata = fs.readFileSync(__dirname + '/linux-credits.txt', 'utf-8'),
+    rawdata = require(__dirname + '/linux-credits.js'),
     runTest = require('./test-doublemetaphone.js');
 
 runTest(require('../doublemetaphone.js'), rawdata, function (diffs) {

@@ -16,12 +16,11 @@ if (typeof String.prototype.trim !== 'function') {
     };
 }
 
-function runTest(DoubleMetaphone, rawdata, callback) {
+function runTest(DoubleMetaphone, refdata, callback) {
     "use strict";
 
     var diffs = 0,
         doubleMetaphone = new DoubleMetaphone(),
-        refdata,
         i, len, line, tokens;
 
     function compareWithCommons(name, refPrimary, refAlternate) {
@@ -47,15 +46,9 @@ function runTest(DoubleMetaphone, rawdata, callback) {
         return diffs;
     }
 
-    refdata = rawdata.split('\n');
     for (i = 0, len = refdata.length; i < len; ++i) { // forEach not possible, should run in browser
-        line = refdata[i];
+        tokens = refdata[i];
 
-        if (line.trim().length === 0 || line.charAt(0) === '#') {
-            continue;
-        }
-
-        tokens = line.split('\t');
         if (tokens.length !== 6) {
             console.log('unexpected line: ' + line);
         }
