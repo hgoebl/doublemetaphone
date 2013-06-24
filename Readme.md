@@ -18,7 +18,13 @@
 
 ## Installation
 
+### Node.js
+
     $ npm install doublemetaphone
+
+### Bower
+
+    $ bower install hgoebl/doublemetaphone --save-dev
 
 ## Information
 
