@@ -3,6 +3,7 @@
       
   Encode a string into a phonetic one with the Double Metaphone algorithm.
 
+```javascript
     var DoubleMetaphone = require('doublemetaphone'),
         encoder = new DoubleMetaphone();
 
@@ -15,6 +16,7 @@
     console.log(encoder.doubleMetaphone('Aleksandr'));
     console.log(encoder.doubleMetaphone('Alexander'));
     // { primary: 'ALKSNTR', alternate: 'ALKSNTR' }
+```
 
 ## Installation
 
